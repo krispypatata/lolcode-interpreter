@@ -1,70 +1,133 @@
 import lexer
 
-RESERVED = 'Reserved'
+# RESERVED = 'Reserved' # inital constant tag for KEYWORDS
+
+# Proram keywords, variables
+HAI = 'Program Start Delimeter'
+KTHXBYE = 'Program End Delimeter'
+WAZZUP = 'Variable Declaration Start Delimeter'
+BUHBYE = 'Variable Declaration End Delimeter'
+I_HAS_A ='Variable Declaration'
+ITZ = 'Variable Initialization'
+R = 'Assignment Keyword'
+
+# Operations
+SUM_OF = 'Arithmetic Operator'
+DIFF_OF = 'Arithmetic Operator'
+PRODUKT_OF = 'Arithmetic Operator'
+QUOSHUNT_OF = 'Arithmetic Operator'
+MOD_OF = 'Arithmetic Operator'
+BIGGR_OF = 'Relational Operator'
+SMALLR_OF = 'Relational Operator'
+BOTH_OF = 'Boolean Operator'
+EITHER_OF = 'Boolean Operator'
+WON_OF = 'Boolean Operator'
+NOT = 'Boolean Operator'
+ANY_OF = 'Boolean Operator'
+ALL_OF = 'Boolean Operator'
+BOTH_SAEM = 'Comparison Operator'
+DIFFRINT = 'Comparison Operator'
+SMOOSH = 'String Concatenate Operator'
+MAEK = 'Typecast Operator'
+A = 'Typecast Operator'
+IS_NOW_A = 'Typecast Operator'
+
+# Part of the expression for operands
+AN = 'Operand Connector'
+YR = 'Parameter Variable'
+AN_YR = 'Additional Parameter Variable'
+
+# Statements
+VISIBLE = 'Print Statement'
+GIMMEH = 'Input Statement'
+O_RLY = 'Conditional Start Delimeter'
+YA_RLY = 'If Clause'
+MEBBE = 'Else If Clause'
+NO_WAI = 'Else Clause'
+OIC = 'Conditional End Delimeter'
+WTF = 'Switch-Case Start Delimeter'
+OMG = 'Case Clause'
+OMGWTF = 'Switch-Case End Delimeter'
+IM_IN_YR = 'Loop Start Delimeter'
+UPPIN = 'Loop Operation'
+NEFFIN = 'Loop Operation'
+TIL = 'Loop Condition'
+WILE = 'Loop Condition'
+IM_OUTTA_YR = 'Loop End Delimeter'
+
+# Functions
+HOW_IZ_I = 'Function Start Delimeter'
+IF_U_SAY_SO = 'Function End Delimeter'
+GTFO = 'Function Return'
+FOUND_YR = 'Function Return'
+I_IZ = 'Function Call'
+MKAY = 'Statement End Delimeter'
 
 # Literals
 NUMBR = 'Integer'
 NUMBAR = 'Float'
 TROOF = 'Boolean'
 YARN = 'String'
+TYPE = 'Literal Type'
+
+# Identifier
 IDENTIFIER = 'Identifier'
-TYPE = 'TYPE'
 
 token_exprs = [
-    (r'[ \n\t]+',                     None),   # whitespace
-    (r'BTW[^\n]*',                    None),   # single line comments
-    (r'OBTW\s*((.|\n)*?)\s*TLDR',     None),   # multi-line comments # multiline comments
-    (r'HAI',                      RESERVED),
-    (r'KTHXBYE',                  RESERVED),
-    (r'WAZZUP',                   RESERVED),
-    (r'BUHBYE',                   RESERVED),
-    (r'I HAS A[ \t]+',            RESERVED),
-    (r'ITZ[ \t]+',                RESERVED),
-    (r'R[ \t]+',                  RESERVED),
-    (r'SUM OF[ \t]+',             RESERVED),
-    (r'DIFF OF[ \t]+',            RESERVED),
-    (r'PRODUKT OF[ \t]+',         RESERVED),
-    (r'QUOSHUNT OF[ \t]+',        RESERVED),
-    (r'MOD OF[ \t]+',             RESERVED),
-    (r'BIGGR OF[ \t]+',           RESERVED),
-    (r'SMALLR OF[ \t]+',          RESERVED),
-    (r'BOTH OF[ \t]+',            RESERVED),
-    (r'EITHER OF[ \t]+',          RESERVED),
-    (r'WON OF[ \t]+',             RESERVED),
-    (r'NOT[ \t]+',                RESERVED),
-    (r'ANY OF[ \t]+',             RESERVED),
-    (r'ALL OF[ \t]+',             RESERVED),
-    (r'AN YR[ \t]+',              RESERVED),
-    (r'AN[ \t]+',                 RESERVED),
-    (r'BOTH SAEM[ \t]+',          RESERVED),
-    (r'DIFFRINT[ \t]+',           RESERVED),
-    (r'SMOOSH[ \t]+',             RESERVED),
-    (r'MAEK[ \t]+',               RESERVED),
-    (r'A[ \t]+',                  RESERVED),
-    (r'IS NOW A[ \t]+',           RESERVED),
-    (r'VISIBLE[ \t]+',            RESERVED),
-    (r'GIMMEH[ \t]+',             RESERVED),
-    (r'O RLY\?',                  RESERVED),
-    (r'YA RLY',                   RESERVED),
-    (r'MEBBE[ \t]+',              RESERVED),
-    (r'NOWAI',                    RESERVED),
-    (r'OIC',                      RESERVED),
-    (r'WTF\?',                    RESERVED),
-    (r'OMG[ \t]+',                RESERVED),
-    (r'OMGWTF',                   RESERVED),
-    (r'IM IN YR[ \t]+',           RESERVED),
-    (r'UPPIN[ \t]+',              RESERVED),
-    (r'NERFIN[ \t]+',             RESERVED),
-    (r'YR[ \t]+',                 RESERVED),
-    (r'TIL[ \t]+',                RESERVED),
-    (r'WILE[ \t]+',               RESERVED),
-    (r'IM OUTTA YR[ \t]+',        RESERVED),
-    (r'HOW IZ I[ \t]+',           RESERVED),
-    (r'IF U SAY SO',              RESERVED),
-    (r'GTFO',                     RESERVED),
-    (r'FOUND YR[ \t]+',           RESERVED),
-    (r'I IZ[ \t]+',               RESERVED),
-    (r'MKAY[ \t]+',               RESERVED),
+    (r'[ \n\t]+',                     None),   # whitespace (ignore)
+    (r'BTW[^\n]*',                    None),   # single line comments (ignore)
+    (r'OBTW\s*((.|\n)*?)\s*TLDR',     None),   # multi-line comments (ignore)
+    (r'HAI',                           HAI),
+    (r'KTHXBYE',                   KTHXBYE),
+    (r'WAZZUP',                     WAZZUP),
+    (r'BUHBYE',                     BUHBYE),
+    (r'I HAS A[ \t]+',             I_HAS_A),
+    (r'ITZ[ \t]+',                     ITZ),
+    (r'R[ \t]+',                         R),
+    (r'SUM OF[ \t]+',               SUM_OF),
+    (r'DIFF OF[ \t]+',             DIFF_OF),
+    (r'PRODUKT OF[ \t]+',       PRODUKT_OF),
+    (r'QUOSHUNT OF[ \t]+',     QUOSHUNT_OF),
+    (r'MOD OF[ \t]+',               MOD_OF),
+    (r'BIGGR OF[ \t]+',           BIGGR_OF),
+    (r'SMALLR OF[ \t]+',         SMALLR_OF),
+    (r'BOTH OF[ \t]+',             BOTH_OF),
+    (r'EITHER OF[ \t]+',         EITHER_OF),
+    (r'WON OF[ \t]+',               WON_OF),
+    (r'NOT[ \t]+',                     NOT),
+    (r'ANY OF[ \t]+',               ANY_OF),
+    (r'ALL OF[ \t]+',               ALL_OF),
+    (r'AN YR[ \t]+',                 AN_YR),
+    (r'AN[ \t]+',                       AN),
+    (r'BOTH SAEM[ \t]+',         BOTH_SAEM),
+    (r'DIFFRINT[ \t]+',           DIFFRINT),
+    (r'SMOOSH[ \t]+',               SMOOSH),
+    (r'MAEK[ \t]+',                   MAEK),
+    (r'A[ \t]+',                         A),
+    (r'IS NOW A[ \t]+',           IS_NOW_A),
+    (r'VISIBLE[ \t]+',             VISIBLE),
+    (r'GIMMEH[ \t]+',               GIMMEH),
+    (r'O RLY\?',                     O_RLY),
+    (r'YA RLY',                     YA_RLY),
+    (r'MEBBE[ \t]+',                 MEBBE),
+    (r'NOWAI',                      NO_WAI),
+    (r'OIC',                           OIC),
+    (r'WTF\?',                         WTF),
+    (r'OMG[ \t]+',                     OMG),
+    (r'OMGWTF',                     OMGWTF),
+    (r'IM IN YR[ \t]+',           IM_IN_YR),
+    (r'UPPIN[ \t]+',                 UPPIN),
+    (r'NERFIN[ \t]+',               NEFFIN),
+    (r'YR[ \t]+',                       YR),
+    (r'TIL[ \t]+',                     TIL),
+    (r'WILE[ \t]+',                   WILE),
+    (r'IM OUTTA YR[ \t]+',     IM_OUTTA_YR),
+    (r'HOW IZ I[ \t]+',           HOW_IZ_I),
+    (r'IF U SAY SO',           IF_U_SAY_SO),
+    (r'GTFO',                         GTFO),
+    (r'FOUND YR[ \t]+',           FOUND_YR),
+    (r'I IZ[ \t]+',                   I_IZ),
+    (r'MKAY[ \t]+',                   MKAY),
     (r'-?[0-9]+\.[0-9]+',           NUMBAR),     # Float
     (r'-?[0-9]+',                    NUMBR),     # Integer
     (r'"[^"]*"',                      YARN),     # String
