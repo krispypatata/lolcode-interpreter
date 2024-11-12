@@ -1,0 +1,52 @@
+HAI               Program Start Delimiter
+HOW IZ I          Function Start Delimiter
+POWERTWO          Identifier
+YR                Loop Parameter Variable
+NUM               Identifier
+AN YR             Loop Parameter Variable
+Y                 Identifier
+BOTH SAEM         Comparison Operator
+NUM               Identifier
+AN                Loop Parameter Variable
+0                 NUMBR Literal
+O RLY?            Conditional Start Delimiter
+YA RLY            If Clause
+FOUND YR          Function Return
+1                 NUMBR Literal
+OIC               Conditional End Delimiter
+I HAS A           Variable Declaration
+INDEX             Identifier
+ITZ               Variable Initialization
+0                 NUMBR Literal
+I HAS A           Variable Declaration
+TOTAL             Identifier
+ITZ               Variable Initialization
+1                 NUMBR Literal
+IM IN YR          Loop Start Delimiter
+LOOP              Identifier
+UPPIN             Loop Operation
+YR                Loop Parameter Variable
+INDEX             Identifier
+TIL               Loop Condition
+BOTH SAEM         Comparison Operator
+INDEX             Identifier
+AN                Loop Parameter Variable
+NUM               Identifier
+TOTAL             Identifier
+R                 Assignment Keyword
+PRODUKT OF        Arithmetic Operator
+TOTAL             Identifier
+AN                Loop Parameter Variable
+2.14              NUMBAR Literal
+IM OUTTA YR       Loop End Delimiter
+LOOP              Identifier
+FOUND YR          Function Return
+TOTAL             Identifier
+IF U SAY SO       Function End Delimiter
+VISIBLE           Print Statement
+I IZ              Function Call
+POWERTWO          Identifier
+YR                Loop Parameter Variable
+4                 NUMBR Literal
+MKAY              Identifier
+KTHXBYE           Program End Delimiter
