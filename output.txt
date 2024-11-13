@@ -48,5 +48,5 @@
 ('POWERTWO', 'Identifier', 25)
 ('YR ', 'Parameter Variable', 25)
 ('4', 'Integer', 25)
-('MKAY', 'Identifier', 25)
+('MKAY', 'Statement End Delimeter', 25)
 ('KTHXBYE', 'Program End Delimeter', 26)

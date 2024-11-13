@@ -50,7 +50,7 @@ OMG = 'Case Clause'
 OMGWTF = 'Switch-Case End Delimeter'
 IM_IN_YR = 'Loop Start Delimeter'
 UPPIN = 'Loop Operation'
-NEFFIN = 'Loop Operation'
+NERFIN = 'Loop Operation'
 TIL = 'Loop Condition'
 WILE = 'Loop Condition'
 IM_OUTTA_YR = 'Loop End Delimeter'
@@ -110,14 +110,14 @@ token_exprs = [
     (r'O RLY\?',                     O_RLY),
     (r'YA RLY',                     YA_RLY),
     (r'MEBBE[ \t]+',                 MEBBE),
-    (r'NOWAI',                      NO_WAI),
+    (r'NO WAI',                      NO_WAI),
     (r'OIC',                           OIC),
     (r'WTF\?',                         WTF),
     (r'OMG[ \t]+',                     OMG),
     (r'OMGWTF',                     OMGWTF),
     (r'IM IN YR[ \t]+',           IM_IN_YR),
     (r'UPPIN[ \t]+',                 UPPIN),
-    (r'NERFIN[ \t]+',               NEFFIN),
+    (r'NERFIN[ \t]+',               NERFIN),
     (r'YR[ \t]+',                       YR),
     (r'TIL[ \t]+',                     TIL),
     (r'WILE[ \t]+',                   WILE),
@@ -127,7 +127,7 @@ token_exprs = [
     (r'GTFO',                         GTFO),
     (r'FOUND YR[ \t]+',           FOUND_YR),
     (r'I IZ[ \t]+',                   I_IZ),
-    (r'MKAY[ \t]+',                   MKAY),
+    (r'MKAY',                         MKAY),
     (r'-?[0-9]+\.[0-9]+',           NUMBAR),     # Float
     (r'-?[0-9]+',                    NUMBR),     # Integer
     (r'"[^"]*"',                      YARN),     # String
